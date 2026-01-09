@@ -1,36 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMAGE EDITOR</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
+
 <body>
     <main>
-        <section>
+        <section class="left-right">
             <div class="left">
                 <div class="navbar">
                     <label for="Image-input" id="image-btn">
                         Choose image
+                        <i class="fa-regular fa-image"></i>
                         <input type="file" id="Image-input" accept="image/*" hidden>
-                        </label>
                     </label>
-                    <button class="btn-1">Reset</button>
-                    <button class="btn-2">Download</button>
+                    </label>
+                    <button class="btn-1">Reset <i class="fa-solid fa-arrow-rotate-right"></i></button>
+                    <button class="btn-2">Download <i class="fa-solid fa-download"></i></button>
                 </div>
+                <a href="#">
+                    <div class="image-box">
+                        <div class="image-add">
+                            Image
+                            <i class="fa-regular fa-image"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
 
-            <div class="image-box">
-                <div class="image-add">
-                    Image
-                </div>
-            </div>
             <div class="right">
+                <div>
+                    <div class="filters">
 
+                        <h2>FILTERS</h2>
+                        <div class="control">
+                            <label>Brightness</label>
+                            <input type="range" min="0" max="200" value="100">
+                        </div>
+
+                        <div class="control">
+                            <label>Contrast</label>
+                            <input type="range" min="0" max="200" value="100">
+                        </div>
+
+                        <div class="control">
+                            <label>Exposure</label>
+                            <input type="range" min="0" max="200" value="100">
+                        </div>
+
+                        <div class="control">
+                            <label>Saturation</label>
+                            <input type="range" min="0" max="200" value="100">
+                        </div>
+
+                        <div class="control">
+                            <label>Hue Rotate</label>
+                            <input type="range" min="0" max="200" value="100">
+                        </div>
+
+                        <div class="control">
+                            <label>Blur</label>
+                            <input type="range" min="0" max="200" value="0">
+                        </div>
+
+                        <div class="control">
+                            <label>Grayscale</label>
+                            <input type="range" min="0" max="200" value="0">
+                        </div>
+
+                        <div class="control">
+                            <label>Sepia</label>
+                            <input type="range" min="0" max="200" value="0">
+                        </div>
+
+                        <div class="control">
+                            <label>opacity</label>
+                            <input type="range" min="0" max="200" value="0">
+                        </div>
+
+                        <div class="control">
+                            <label>Invert</label>
+                            <input type="range" min="0" max="200" value="0">
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>
+    <script src="script.js" ></script>
 </body>
+
 </html>
- 
