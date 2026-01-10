@@ -1,59 +1,3 @@
-const imageCanvas = document.querySelector("#imageCanvas")
-
-const imageinput = document.querySelector("#Image-input")
-
-const CanvasCtx = imageCanvas.getContext("2d")
-
-const filterscontainer = document.querySelector(".filters")
-
-let file = null 
-
-let image = null 
-
-const filterContainer = document.querySelector(".filters")
-
-function createFilterelement(name, unit = "%", value, min, max) {
-    const div = document.createlement("div")
-    div.classlist.add("filter")
-
-    const input = document.createElement("input")
-    input.type = "range"
-    input.min = min 
-    input.max = max
-    input.value = value
-    input.id = name 
-
-    const p = document.createElement("p")
-    p.innerText = name
-
-    div.appendChild(p)
-    div.appendChild(input)
-
-    input.addEventListener("input", (event) => {
-        filters[ name ].value = input.value
-    })
-
-    return div 
-}
-
-imageinput.addEventListener("change", (event) => {
-
-    file = event.target.files[0]
-
-    const placeholder = document.querySelector(".image-add")
-    placeholder.style.display = "none"
-
-    const img = new Image()
-    img.src = URL.createObjectURL(file)
-
-    img.onload = () => {
-        image = img
-        imageCanvas.width = img.width
-        imageCanvas.height = img.height
-        CanvasCtx.drawImage(img, 0, 0)
-    }
-})
-
 const filters = {
     brightness: {
         value: 100,
@@ -116,6 +60,62 @@ const filters = {
         unit: "%"
     },
 }
+const imageCanvas = document.querySelector("#imageCanvas")
+
+const imageinput = document.querySelector("#Image-input")
+
+const CanvasCtx = imageCanvas.getContext("2d")
+
+const filterscontainer = document.querySelector(".filters")
+
+let file = null 
+
+let image = null 
+
+const filterContainer = document.querySelector(".filters")
+
+function createFilterelement(name, unit = "%", value, min, max) {
+    const div = document.createlement("div")
+    div.classlist.add("filter")
+
+    const input = document.createElement("input")
+    input.type = "range"
+    input.min = min 
+    input.max = max
+    input.value = value
+    input.id = name 
+
+    const p = document.createElement("p")
+    p.innerText = name
+
+    div.appendChild(p)
+    div.appendChild(input)
+
+    input.addEventListener("input", (event) => {
+        filters[ name ].value = input.value
+    })
+
+    return div 
+}
+
+imageinput.addEventListener("change", (event) => {
+
+    file = event.target.files[0]
+
+    const placeholder = document.querySelector(".image-add")
+    placeholder.style.display = "none"
+
+    const img = new Image()
+    img.src = URL.createObjectURL(file)
+
+    img.onload = () => {
+        image = img
+        imageCanvas.width = img.width
+        imageCanvas.height = img.height
+        CanvasCtx.drawImage(img, 0, 0)
+    }
+})
+
 
 function applyFilters() {
     CanvasCtx.filters = `
