@@ -52,14 +52,14 @@ const filters = {
         min: 0,
         max: 200,
         unit: "%"
-    },
+    },    
     Invert: {
         value: 0,
         min: 0,
         max: 200,
         unit: "%"
-    },
-}
+    },    
+}    
 const imageCanvas = document.querySelector("#imageCanvas")
 
 const imageinput = document.querySelector("#Image-input")
@@ -98,6 +98,12 @@ function createFilterelement(name, unit = "%", value, min, max) {
     return div 
 }
 
+objects.keys(filters).forEach(key => {
+    const filterElement = createfilterelement(key, filters[ key, filters[ key ].unit, filters[ key ].value, filters[ key ].min, filters[ key ].max ])
+
+    filterContainer.appendChild(filterElement)
+});
+
 imageinput.addEventListener("change", (event) => {
 
     file = event.target.files[0]
@@ -132,3 +138,116 @@ function applyFilters() {
     `
     CanvasCtx.drawImage(image, 0, 0)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
